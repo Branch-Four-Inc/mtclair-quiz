@@ -29,30 +29,48 @@ async function main() {
   // 3. Question data
   const questions = [
     {
-      text: "What does the number under the bottom of plastic bottles mean?",
+      text: "When should Montclair residents put their garbage out for collection?",
       answers: [
-        { text: "Where the bottle ends up going", correct: true },
-        { text: "How many times the item has been recycled", correct: false },
-        { text: "The number of chemicals used to create the bottle", correct: false },
-        { text: "The resale value of the bottle", correct: false },
+        { text: "Anytime during the day", correct: false },
+        { text: "Between 6 a.m. and noon on collection day", correct: false },
+        { text: "Between 6 p.m. the day before and 6 a.m. the day of collection", correct: true },
+        { text: "Only after 8 p.m. the night before", correct: false },
       ],
     },
     {
-      text: "Where can Hudson County residents drop off household hazardous waste like paint or batteries?",
+      text: "Which of the following items is currently NOT accepted for recycling in Montclair?",
       answers: [
-        { text: "Any curbside bin", correct: false },
-        { text: "HCIA facility in Secaucus", correct: true },
-        { text: "Regular trash pickup", correct: false },
-        { text: "A nearby park", correct: false },
-      ],
-    },
-    {
-      text: "Which of these is NOT accepted curbside in most Hudson County municipalities?",
-      answers: [
-        { text: "Cardboard boxes", correct: true },
-        { text: "Plastic bottles (#1 & #2)", correct: false },
-        { text: "Plastic bags", correct: false },
+        { text: "Glass bottles", correct: false },
         { text: "Aluminum cans", correct: false },
+        { text: "Mixed paper", correct: false },
+        { text: "Styrofoam", correct: true },
+      ],
+    },
+    {
+      text: "How many large household items (mattress, box spring, etc.) may a Montclair resident leave at the curb for bulky waste collection?",
+      answers: [
+        { text: "1", correct: false },
+        { text: "2", correct: false },
+        { text: "3", correct: true },
+        { text: "5", correct: false },
+      ],
+    },
+    {
+      text: "What must residents do with mattresses and box springs before putting them out for collection?",
+      answers: [
+        { text: "Wrap them in cardboard", correct: false },
+        { text: "Place them in a plastic bag", correct: true },
+        { text: "Place them in a biodegradable paper bag", correct: false },
+        { text: "Call ahead to schedule a pickup", correct: false },
+      ],
+    },
+    {
+      text: "During which two periods does Montclair collect loose leaves at the curb?",
+      answers: [
+        { text: "Oct 15 – Dec 1 and April 1 – April 30", correct: true },
+        { text: "Sept 1 – Nov 30 and March 1 – March 31", correct: false },
+        { text: "Oct 1 – Nov 30 and March 15 – April 15", correct: false },
+        { text: "Nov 1 – Dec 15 and April 1 – April 30", correct: false },
       ],
     },
   ];
