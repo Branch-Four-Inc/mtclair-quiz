@@ -1,7 +1,10 @@
+export const runtime = "edge";
+
 export async function GET(request, { env }) {
   try {
-    // 1. Get quiz
-    const quiz = await env.DB
+    const db = env.DB;
+
+    const quiz = await db
       .prepare("SELECT * FROM quizzes LIMIT 1")
       .first();
 
@@ -9,22 +12,21 @@ export async function GET(request, { env }) {
       return Response.json({ error: "No quiz found" }, { status: 404 });
     }
 
-    // 2. Get questions
-    const questions = await env.DB
+    const questions = await db
       .prepare(
         "SELECT * FROM questions WHERE quiz_id = ? ORDER BY order_number ASC"
       )
       .bind(quiz.id)
       .all();
 
-    // 3. Get answers for all questions
     const questionIds = questions.results.map(q => q.id);
 
-    let answers = [];
+    let answers = { results: [] };
+
     if (questionIds.length > 0) {
       const placeholders = questionIds.map(() => "?").join(",");
 
-      answers = await env.DB
+      answers = await db
         .prepare(
           `SELECT * FROM answers WHERE question_id IN (${placeholders})`
         )
@@ -32,8 +34,7 @@ export async function GET(request, { env }) {
         .all();
     }
 
-    // 4. Build response structure
-    const formatted = {
+    return Response.json({
       quiz_name: quiz.title,
       questions: questions.results.map(q => ({
         id: q.id,
@@ -45,13 +46,11 @@ export async function GET(request, { env }) {
           a => a.question_id === q.id && a.is_correct
         )?.answer_text,
       })),
-    };
-
-    return Response.json(formatted);
+    });
 
   } catch (err) {
     return Response.json(
-      { error: "Server error", details: err.message },
+      { error: err.message },
       { status: 500 }
     );
   }
