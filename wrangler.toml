@@ -1,0 +1,6 @@
+name = "mtclair-quiz"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "quiz-db"
+database_id = "915aaa35-92f6-4e70-8198-6f2e564ba4f8"

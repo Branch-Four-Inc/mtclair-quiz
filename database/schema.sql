@@ -1,0 +1,20 @@
+CREATE TABLE quizzes (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  title TEXT NOT NULL
+);
+
+CREATE TABLE questions (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  quiz_id INTEGER NOT NULL,
+  question_text TEXT NOT NULL,
+  order_number INTEGER NOT NULL,
+  FOREIGN KEY (quiz_id) REFERENCES quizzes(id)
+);
+
+CREATE TABLE answers (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  question_id INTEGER NOT NULL,
+  answer_text TEXT NOT NULL,
+  is_correct INTEGER NOT NULL DEFAULT 0,
+  FOREIGN KEY (question_id) REFERENCES questions(id)
+);

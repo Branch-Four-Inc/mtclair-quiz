@@ -1,5 +1,7 @@
 const { PrismaClient } = require("@prisma/client");
+const { PrismaD1 } = require('@prisma/adapter-d1'); // added this in order to use D1 with Prisma (step 7)
 
+const adapter = new PrismaD1(process.env.DB); // added this in with Stp 7 too, might be env.DB rather than process.env.DB
 const prisma = new PrismaClient();
 
 async function main() {

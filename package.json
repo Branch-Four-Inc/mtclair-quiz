@@ -4,23 +4,18 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "prisma generate && next build",
-    "start": "next start",
-    "postinstall": "prisma generate"
+    "build": "next build",
+    "start": "next start"
   },
   "dependencies": {
-    "@prisma/client": "^5.0.0",
     "next": "14.x",
     "react": "18.x",
-    "react-dom": "18.x"
+    "react-dom": "18.x",
+    "wrangler": "^4.98.0"
   },
   "devDependencies": {
     "@types/node": "25.6.0",
     "@types/react": "19.2.14",
-    "prisma": "^5.0.0",
     "typescript": "6.0.3"
-  },
-  "prisma": {
-    "seed": "node prisma/seed.js"
   }
 }

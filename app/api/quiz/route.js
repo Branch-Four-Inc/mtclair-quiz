@@ -1,31 +1,58 @@
-import { prisma } from "@/lib/prisma";
-
-export async function GET() {
+export async function GET(request, { env }) {
   try {
-    const quiz = await prisma.quiz.findFirst({
-      include: {
-        questions: {
-          orderBy: { order_number: "asc" },
-          include: { answers: true },
-        },
-      },
-    });
+    // 1. Get quiz
+    const quiz = await env.DB
+      .prepare("SELECT * FROM quizzes LIMIT 1")
+      .first();
 
-    if (!quiz || !quiz.questions?.length) {
-    return Response.json({ error: "No quiz found" }, { status: 404 });
+    if (!quiz) {
+      return Response.json({ error: "No quiz found" }, { status: 404 });
     }
 
-    return Response.json({
+    // 2. Get questions
+    const questions = await env.DB
+      .prepare(
+        "SELECT * FROM questions WHERE quiz_id = ? ORDER BY order_number ASC"
+      )
+      .bind(quiz.id)
+      .all();
+
+    // 3. Get answers for all questions
+    const questionIds = questions.results.map(q => q.id);
+
+    let answers = [];
+    if (questionIds.length > 0) {
+      const placeholders = questionIds.map(() => "?").join(",");
+
+      answers = await env.DB
+        .prepare(
+          `SELECT * FROM answers WHERE question_id IN (${placeholders})`
+        )
+        .bind(...questionIds)
+        .all();
+    }
+
+    // 4. Build response structure
+    const formatted = {
       quiz_name: quiz.title,
-      questions: quiz.questions.map(q => ({
+      questions: questions.results.map(q => ({
         id: q.id,
         text: q.question_text,
-        options: q.answers.map(a => a.answer_text),
-        correct_answer: q.answers.find(a => a.is_correct)?.answer_text,
+        options: answers.results
+          .filter(a => a.question_id === q.id)
+          .map(a => a.answer_text),
+        correct_answer: answers.results.find(
+          a => a.question_id === q.id && a.is_correct
+        )?.answer_text,
       })),
-    });
+    };
+
+    return Response.json(formatted);
 
   } catch (err) {
-    return Response.json({ error: "Server error" }, { status: 500 });
+    return Response.json(
+      { error: "Server error", details: err.message },
+      { status: 500 }
+    );
   }
 }
