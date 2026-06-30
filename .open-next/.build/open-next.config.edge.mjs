@@ -213,6 +213,7 @@ var open_next_config_default = defineCloudflareConfig({
   // For best results consider enabling R2 caching
   // See https://opennext.js.org/cloudflare/caching for more details
   // incrementalCache: r2IncrementalCache
+  // "buildCommand": "next build",
 });
 export {
   open_next_config_default as default
