@@ -1,6 +1,6 @@
 {
   "name": "mtclair-quiz",
-  "main": ".open-next/worker.js"
+  "main": ".open-next/worker.js",
   "compatibility_date": "2025-06-01",
   "compatibility_flags": ["nodejs_compat"],
   "d1_databases": [
