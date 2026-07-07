@@ -1,7 +1,8 @@
-// export const runtime = "edge";
+import { getCloudflareContext } from "@opennextjs/cloudflare";
 
-/*export async function GET(request, { env }) {
+export async function GET() {
   try {
+    const { env } = getCloudflareContext();
     const db = env.DB;
 
     const quiz = await db
@@ -9,7 +10,10 @@
       .first();
 
     if (!quiz) {
-      return Response.json({ error: "No quiz found" }, { status: 404 });
+      return Response.json(
+        { error: "No quiz found" },
+        { status: 404 }
+      );
     }
 
     const questions = await db
@@ -17,19 +21,7 @@
         "SELECT * FROM questions WHERE quiz_id = ? ORDER BY order_number ASC"
       )
       .bind(quiz.id)
-      .all(); */
-
-import { getCloudflareContext } from "@opennextjs/cloudflare";
-
-export async function GET() {
-  try {
-    const { env } = getCloudflareContext();
-
-    const db = env.DB;
-
-    const quiz = await db
-      .prepare("SELECT * FROM quizzes LIMIT 1")
-      .first();
+      .all();
 
     const questionIds = questions.results.map(q => q.id);
 
@@ -59,8 +51,7 @@ export async function GET() {
         )?.answer_text,
       })),
     });
-
-   } catch (err) {
+  } catch (err) {
     return Response.json(
       {
         error: err.message,
@@ -70,10 +61,3 @@ export async function GET() {
     );
   }
 }
-  /*} catch (err) {
-    return Response.json(
-      { error: err.message },
-      { status: 500 }
-    );
-  }
-}*/
