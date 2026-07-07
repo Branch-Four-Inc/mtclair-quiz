@@ -2,6 +2,9 @@
 
 export async function GET(request) {
   return Response.json({
-    hasCloudflare: !!request.cf,
+    node: process.version,
+    cf: !!request.cf,
+    url: request.url,
+    headers: Object.fromEntries(request.headers),
   });
 }
