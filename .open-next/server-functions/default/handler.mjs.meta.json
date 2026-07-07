@@ -3658,12 +3658,12 @@
       "imports": [],
       "format": "cjs"
     },
-    ".open-next/server-functions/default/.next/server/app/api/quiz/route_client-reference-manifest.js": {
+    ".open-next/server-functions/default/.next/server/app/api/test/route_client-reference-manifest.js": {
       "bytes": 313,
       "imports": [],
       "format": "cjs"
     },
-    ".open-next/server-functions/default/.next/server/app/api/test/route_client-reference-manifest.js": {
+    ".open-next/server-functions/default/.next/server/app/api/quiz/route_client-reference-manifest.js": {
       "bytes": 313,
       "imports": [],
       "format": "cjs"
@@ -3692,14 +3692,14 @@
           "original": "../shared/lib/deep-freeze"
         },
         {
-          "path": ".open-next/server-functions/default/.next/server/app/api/quiz/route_client-reference-manifest.js",
-          "kind": "require-call",
-          "original": "/Users/swatisharma/Documents/mtclair-quiz/.open-next/server-functions/default/.next/server/app/api/quiz/route_client-reference-manifest.js"
-        },
-        {
           "path": ".open-next/server-functions/default/.next/server/app/api/test/route_client-reference-manifest.js",
           "kind": "require-call",
           "original": "/Users/swatisharma/Documents/mtclair-quiz/.open-next/server-functions/default/.next/server/app/api/test/route_client-reference-manifest.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/app/api/quiz/route_client-reference-manifest.js",
+          "kind": "require-call",
+          "original": "/Users/swatisharma/Documents/mtclair-quiz/.open-next/server-functions/default/.next/server/app/api/quiz/route_client-reference-manifest.js"
         }
       ],
       "format": "cjs"
@@ -4367,8 +4367,8 @@
       ],
       "format": "cjs"
     },
-    ".open-next/server-functions/default/.next/server/chunks/[root-of-the-server]__053d_0b._.js": {
-      "bytes": 7930,
+    ".open-next/server-functions/default/.next/server/chunks/[externals]_next_dist_1ymdeph._.js": {
+      "bytes": 875,
       "imports": [
         {
           "path": ".open-next/server-functions/default/node_modules/next/dist/shared/lib/no-fallback-error.external.js",
@@ -4535,6 +4535,11 @@
       "imports": [],
       "format": "cjs"
     },
+    ".open-next/server-functions/default/.next/server/chunks/node_modules_next_dist_esm_build_templates_app-route_0x4cc7u.js": {
+      "bytes": 8378,
+      "imports": [],
+      "format": "cjs"
+    },
     ".open-next/server-functions/default/.next/server/chunks/[root-of-the-server]__12pmrys._.js": {
       "bytes": 7284,
       "imports": [
@@ -4604,7 +4609,7 @@
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/chunks/[turbopack]_runtime.js": {
-      "bytes": 41409,
+      "bytes": 41682,
       "imports": [
         {
           "path": "worker_threads",
@@ -4727,9 +4732,9 @@
           "original": "/Users/swatisharma/Documents/mtclair-quiz/.open-next/server-functions/default/.next/server/chunks/ssr/node_modules_next_dist_esm_build_templates_app-page_19--w_z.js"
         },
         {
-          "path": ".open-next/server-functions/default/.next/server/chunks/[root-of-the-server]__053d_0b._.js",
+          "path": ".open-next/server-functions/default/.next/server/chunks/[externals]_next_dist_1ymdeph._.js",
           "kind": "require-call",
-          "original": "/Users/swatisharma/Documents/mtclair-quiz/.open-next/server-functions/default/.next/server/chunks/[root-of-the-server]__053d_0b._.js"
+          "original": "/Users/swatisharma/Documents/mtclair-quiz/.open-next/server-functions/default/.next/server/chunks/[externals]_next_dist_1ymdeph._.js"
         },
         {
           "path": ".open-next/server-functions/default/.next/server/chunks/[root-of-the-server]__15bjnu5._.js",
@@ -4745,6 +4750,11 @@
           "path": ".open-next/server-functions/default/.next/server/chunks/_next-internal_server_app_api_quiz_route_actions_0bz7jgv.js",
           "kind": "require-call",
           "original": "/Users/swatisharma/Documents/mtclair-quiz/.open-next/server-functions/default/.next/server/chunks/_next-internal_server_app_api_quiz_route_actions_0bz7jgv.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/chunks/node_modules_next_dist_esm_build_templates_app-route_0x4cc7u.js",
+          "kind": "require-call",
+          "original": "/Users/swatisharma/Documents/mtclair-quiz/.open-next/server-functions/default/.next/server/chunks/node_modules_next_dist_esm_build_templates_app-route_0x4cc7u.js"
         },
         {
           "path": ".open-next/server-functions/default/.next/server/chunks/[root-of-the-server]__12pmrys._.js",
@@ -4785,7 +4795,7 @@
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/chunks/ssr/[turbopack]_runtime.js": {
-      "bytes": 41419,
+      "bytes": 41692,
       "imports": [
         {
           "path": "worker_threads",
@@ -4908,9 +4918,9 @@
           "original": "/Users/swatisharma/Documents/mtclair-quiz/.open-next/server-functions/default/.next/server/chunks/ssr/node_modules_next_dist_esm_build_templates_app-page_19--w_z.js"
         },
         {
-          "path": ".open-next/server-functions/default/.next/server/chunks/[root-of-the-server]__053d_0b._.js",
+          "path": ".open-next/server-functions/default/.next/server/chunks/[externals]_next_dist_1ymdeph._.js",
           "kind": "require-call",
-          "original": "/Users/swatisharma/Documents/mtclair-quiz/.open-next/server-functions/default/.next/server/chunks/[root-of-the-server]__053d_0b._.js"
+          "original": "/Users/swatisharma/Documents/mtclair-quiz/.open-next/server-functions/default/.next/server/chunks/[externals]_next_dist_1ymdeph._.js"
         },
         {
           "path": ".open-next/server-functions/default/.next/server/chunks/[root-of-the-server]__15bjnu5._.js",
@@ -4926,6 +4936,11 @@
           "path": ".open-next/server-functions/default/.next/server/chunks/_next-internal_server_app_api_quiz_route_actions_0bz7jgv.js",
           "kind": "require-call",
           "original": "/Users/swatisharma/Documents/mtclair-quiz/.open-next/server-functions/default/.next/server/chunks/_next-internal_server_app_api_quiz_route_actions_0bz7jgv.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/chunks/node_modules_next_dist_esm_build_templates_app-route_0x4cc7u.js",
+          "kind": "require-call",
+          "original": "/Users/swatisharma/Documents/mtclair-quiz/.open-next/server-functions/default/.next/server/chunks/node_modules_next_dist_esm_build_templates_app-route_0x4cc7u.js"
         },
         {
           "path": ".open-next/server-functions/default/.next/server/chunks/[root-of-the-server]__12pmrys._.js",
@@ -4988,7 +5003,7 @@
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/api/quiz/route.js": {
-      "bytes": 324,
+      "bytes": 409,
       "imports": [
         {
           "path": ".open-next/server-functions/default/.next/server/chunks/[turbopack]_runtime.js",
@@ -7469,10 +7484,10 @@
         ".open-next/server-functions/default/node_modules/next/dist/shared/lib/deep-freeze.js": {
           "bytesInOutput": 586
         },
-        ".open-next/server-functions/default/.next/server/app/api/quiz/route_client-reference-manifest.js": {
+        ".open-next/server-functions/default/.next/server/app/api/test/route_client-reference-manifest.js": {
           "bytesInOutput": 444
         },
-        ".open-next/server-functions/default/.next/server/app/api/test/route_client-reference-manifest.js": {
+        ".open-next/server-functions/default/.next/server/app/api/quiz/route_client-reference-manifest.js": {
           "bytesInOutput": 445
         },
         ".open-next/server-functions/default/node_modules/next/dist/server/load-manifest.external.js": {
@@ -7598,8 +7613,8 @@
         ".open-next/server-functions/default/.next/server/chunks/ssr/node_modules_next_dist_esm_build_templates_app-page_19--w_z.js": {
           "bytesInOutput": 22858
         },
-        ".open-next/server-functions/default/.next/server/chunks/[root-of-the-server]__053d_0b._.js": {
-          "bytesInOutput": 8022
+        ".open-next/server-functions/default/.next/server/chunks/[externals]_next_dist_1ymdeph._.js": {
+          "bytesInOutput": 815
         },
         ".open-next/server-functions/default/node_modules/next/dist/compiled/next-server/app-route-turbo.runtime.prod.js": {
           "bytesInOutput": 181390
@@ -7609,6 +7624,9 @@
         },
         ".open-next/server-functions/default/.next/server/chunks/_next-internal_server_app_api_quiz_route_actions_0bz7jgv.js": {
           "bytesInOutput": 252
+        },
+        ".open-next/server-functions/default/.next/server/chunks/node_modules_next_dist_esm_build_templates_app-route_0x4cc7u.js": {
+          "bytesInOutput": 8715
         },
         ".open-next/server-functions/default/.next/server/chunks/[root-of-the-server]__12pmrys._.js": {
           "bytesInOutput": 7340
@@ -7629,10 +7647,10 @@
           "bytesInOutput": 23129
         },
         ".open-next/server-functions/default/.next/server/chunks/[turbopack]_runtime.js": {
-          "bytesInOutput": 20217
+          "bytesInOutput": 20380
         },
         ".open-next/server-functions/default/.next/server/chunks/ssr/[turbopack]_runtime.js": {
-          "bytesInOutput": 20232
+          "bytesInOutput": 20395
         },
         ".open-next/server-functions/default/.next/server/app/_global-error/page.js": {
           "bytesInOutput": 696
@@ -7641,7 +7659,7 @@
           "bytesInOutput": 915
         },
         ".open-next/server-functions/default/.next/server/app/api/quiz/route.js": {
-          "bytesInOutput": 424
+          "bytesInOutput": 509
         },
         ".open-next/server-functions/default/.next/server/app/api/test/route.js": {
           "bytesInOutput": 427
@@ -7797,7 +7815,7 @@
           "bytesInOutput": 57234
         }
       },
-      "bytes": 2578026
+      "bytes": 2579945
     }
   }
 }
