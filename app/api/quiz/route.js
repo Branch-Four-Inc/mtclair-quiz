@@ -1,6 +1,6 @@
 // export const runtime = "edge";
 
-export async function GET(request, { env }) {
+/*export async function GET(request, { env }) {
   try {
     const db = env.DB;
 
@@ -17,7 +17,19 @@ export async function GET(request, { env }) {
         "SELECT * FROM questions WHERE quiz_id = ? ORDER BY order_number ASC"
       )
       .bind(quiz.id)
-      .all();
+      .all(); */
+
+import { getCloudflareContext } from "@opennextjs/cloudflare";
+
+export async function GET() {
+  try {
+    const { env } = getCloudflareContext();
+
+    const db = env.DB;
+
+    const quiz = await db
+      .prepare("SELECT * FROM quizzes LIMIT 1")
+      .first();
 
     const questionIds = questions.results.map(q => q.id);
 
@@ -48,10 +60,20 @@ export async function GET(request, { env }) {
       })),
     });
 
-  } catch (err) {
+   } catch (err) {
+    return Response.json(
+      {
+        error: err.message,
+        stack: err.stack,
+      },
+      { status: 500 }
+    );
+  }
+}
+  /*} catch (err) {
     return Response.json(
       { error: err.message },
       { status: 500 }
     );
   }
-}
+}*/
